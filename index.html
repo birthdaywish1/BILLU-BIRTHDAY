@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Billu ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#08050a; --wine:#8e1534; --red:#d32d59;
+  --gold:#e4c28b; --cream:#fff0e9; --muted:#d0b9c1;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Montserrat',Arial,sans-serif;
+  --script:'Great Vibes',cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{min-width:320px;overflow-x:hidden;background:var(--bg);color:var(--cream);font-family:var(--sans)}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 50% 0%,#481124,transparent 48%),radial-gradient(ellipse at 8% 90%,#280b19,transparent 42%),#08050a}
+button{font:inherit;cursor:pointer}
+#three-bg{position:fixed;inset:0;z-index:-1;pointer-events:none}
+#three-bg canvas{width:100%;height:100%;display:block}
+#particles{position:fixed;inset:0;z-index:8;pointer-events:none;overflow:hidden}
+.petal{position:absolute;top:-35px;color:#e14a70;animation:fall linear forwards}
+@keyframes fall{to{transform:translate3d(8vw,110vh,0) rotate(720deg);opacity:0}}
+@keyframes heartbeat{50%{transform:scale(1.17)}}
+@keyframes float{50%{transform:translateY(-12px)}}
+@keyframes reveal{from{opacity:0;transform:translateY(25px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes shimmer{to{background-position:200% center}}
+@keyframes flame{to{transform:scale(.82) rotate(8deg)}}
+section{position:relative;padding:110px 7%;text-align:center;perspective:1200px}
+.eyebrow{color:var(--gold);letter-spacing:5px;font-size:10px;text-transform:uppercase;margin-bottom:18px}
+h1,h2,h3{font-family:var(--script);font-weight:400}
+h2{font-size:clamp(48px,7vw,78px);color:#f8dce3;margin-bottom:16px}
+p{font-size:13px;line-height:1.9;color:var(--muted)}
+.gold-line{height:1px;width:70px;margin:24px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.btn{border:1px solid var(--gold);color:var(--gold);background:linear-gradient(145deg,#351020,#12080e);padding:15px 28px;letter-spacing:2px;font-size:10px;text-transform:uppercase;box-shadow:0 10px 25px #0007;transition:.3s}
+.btn:hover{transform:translateY(-4px) rotateX(8deg);background:linear-gradient(145deg,#8e1534,#3b1021);box-shadow:0 16px 35px #0009,0 0 25px #d32d5940}
+#intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;text-align:center;padding:24px;background:radial-gradient(circle at 50% 45%,#64152c,#180812 50%,#050307);transition:opacity 1s,visibility 1s}
+#intro.hide{opacity:0;visibility:hidden;pointer-events:none}
+.intro-content{position:relative;z-index:2;animation:reveal 1.5s}
+.intro-ring{position:absolute;left:50%;top:50%;width:min(78vw,520px);aspect-ratio:1;border:1px solid #e4c28b55;border-radius:50%;transform:translate(-50%,-50%);animation:orbit 24s linear infinite}
+.intro-ring:before,.intro-ring:after{content:"";position:absolute;inset:12%;border:1px dashed #e4c28b44;border-radius:50%}
+.intro-ring:after{inset:25%;border-style:solid}
+.intro-heart{font-size:60px;color:#f04470;text-shadow:0 0 35px #ff4777;animation:heartbeat 1.5s infinite}
+#intro h1{font-size:clamp(75px,13vw,125px);color:#ffe8e6;margin:10px 0}
+.intro-sub{color:var(--gold);letter-spacing:4px;font-size:10px;margin:10px 0 30px}
+#hero{min-height:100svh;display:grid;place-items:center;overflow:hidden}
+.hero-content{position:relative;z-index:2;animation:reveal 1.5s}
+.hero-kicker{color:var(--gold);letter-spacing:6px;font-size:10px;margin-bottom:25px}
+.hero-title{font-size:clamp(76px,14vw,150px);line-height:1.02;background:linear-gradient(110deg,#fff4ed,#d8a3b3,#fff5dc,#d8a3b3);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 8s linear infinite}
+.hero-subtitle{color:var(--gold);letter-spacing:7px;font-size:11px;margin-top:22px}
+.hero-rose{font-size:85px;margin:25px;animation:float 4s ease-in-out infinite}
+.hero-orbit{position:absolute;width:min(75vw,500px);aspect-ratio:1;border:1px solid #e4c28b30;border-radius:50%;transform:rotateX(68deg)}
+.scroll-hint{position:absolute;bottom:28px;letter-spacing:4px;font-size:9px;color:#c5aeb6;animation:float 2s infinite}
+.card-3d{transform-style:preserve-3d;transition:transform .45s,box-shadow .45s;box-shadow:0 25px 55px #0009}
+.card-3d:hover{transform:translateY(-10px) rotateX(4deg) rotateY(-4deg);box-shadow:0 35px 65px #000b}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;max-width:1100px;margin:55px auto 0;perspective:1200px}
+.photo-card{padding:10px;border:1px solid #c49a6455;background:linear-gradient(145deg,#481326,#10080d);transform-style:preserve-3d}
+.photo-card img{display:block;width:100%;height:360px;object-fit:cover;background:#211018;transform:translateZ(18px)}
+.photo-caption{padding:18px 5px 10px;color:#f0d4db;font:24px var(--serif)}
+.slideshow{width:min(100%,720px);margin:45px auto 0;padding:11px;border:1px solid #c49a6470;background:linear-gradient(145deg,#421020,#10080d);transform:rotateX(2deg);box-shadow:0 30px 60px #000b}
+.slide-frame{overflow:hidden;background:#170a10}
+.slide-frame img{display:block;width:100%;height:clamp(280px,54vw,510px);object-fit:cover;transition:opacity .4s}
+.slide-caption{padding:16px 8px 7px;color:#f0d4db;font:25px var(--serif)}
+.slide-controls{display:flex;justify-content:center;align-items:center;gap:18px;padding:8px}
+.slide-btn{width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;color:var(--gold);background:#190a10;font-size:20px}
+.slide-dots{display:flex;gap:8px}
+.slide-dot{width:8px;height:8px;border:0;border-radius:50%;background:#80616a}
+.slide-dot.active{width:21px;border-radius:10px;background:var(--gold)}
+.message-box{width:min(100%,760px);margin:45px auto 0;padding:clamp(28px,5vw,55px);border:1px solid #d9b77855;background:linear-gradient(145deg,rgba(55,18,34,.78),rgba(10,6,10,.88));backdrop-filter:blur(12px);box-shadow:0 30px 70px #000b}
+.message-box p,.letter p{font:22px/1.9 var(--serif);color:#f0dce0}
+.cake-stage{width:260px;height:245px;margin:40px auto 25px;position:relative;perspective:800px}
+.cake-3d{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(7deg);transition:.7s}
+.cake-3d:hover{transform:rotateX(12deg) rotateY(-8deg)}
+.cake-bottom{position:absolute;left:25px;top:115px;width:210px;height:88px;border-radius:0 0 28px 28px;background:linear-gradient(90deg,#64102b,#d13c63 45%,#76132f);box-shadow:inset -18px 0 25px #390918,0 28px 25px #0009}
+.cake-top{position:absolute;left:25px;top:88px;width:210px;height:55px;border-radius:50%;background:radial-gradient(ellipse,#ffe0d5,#e9a9b7 68%,#a93b59);border:4px solid #f6d0ce}
+.cake-side{position:absolute;left:25px;top:120px;width:210px;height:82px;border-radius:0 0 25px 25px;background:repeating-linear-gradient(90deg,#9b2445 0 18px,#c33c60 18px 35px);opacity:.45}
+.cake-plate{position:absolute;left:5px;top:195px;width:250px;height:24px;border-radius:50%;background:linear-gradient(#fff0c9,#b88b52 55%,#65452f)}
+.cake-candle{position:absolute;z-index:4;left:50%;top:32px;width:12px;height:65px;transform:translateX(-50%);border-radius:4px;background:repeating-linear-gradient(45deg,#fff1d7 0 8px,#b51d43 8px 16px)}
+.flame{position:absolute;top:-30px;left:-4px;width:20px;height:29px;border-radius:50%;background:radial-gradient(ellipse,#fff9bd,#ffb32f 55%,#ee421c);box-shadow:0 0 25px #ff9c20,0 0 45px #ff6b1b88;animation:flame .8s infinite alternate}
+.flame.off{display:none}
+.cake-cherry{position:absolute;z-index:5;left:50%;top:98px;transform:translateX(-50%);font-size:19px}
+.gift-wrap{margin:70px auto 35px;width:240px;height:235px;perspective:1000px;position:relative}
+.gift{position:absolute;inset:0;transform-style:preserve-3d;cursor:pointer;transition:transform .7s}
+.gift:hover{transform:rotateY(-8deg) rotateX(4deg)}
+.gift-box{position:absolute;left:30px;bottom:12px;width:180px;height:125px}
+.gift-front{position:absolute;inset:0;background:linear-gradient(145deg,#d83c61,#8b102f);border:1px solid #f4d39a}
+.gift-front:before{content:"";position:absolute;left:74px;top:0;width:30px;height:100%;background:linear-gradient(90deg,#bd9255,#fff0b5,#c39a5c)}
+.gift-side{position:absolute;right:-22px;top:9px;width:22px;height:125px;transform:skewY(-35deg);background:#8b1534}
+.gift-top{position:absolute;left:0;top:-18px;width:180px;height:28px;transform:skewX(-35deg);background:#ed6380}
+.gift-lid{position:absolute;z-index:5;left:22px;top:77px;width:196px;height:32px;transform-origin:10% 90%;background:linear-gradient(90deg,#a81539,#ed5575);border:1px solid #f3d49a;transition:transform .9s}
+.gift-lid:before{content:"";position:absolute;left:80px;top:0;width:30px;height:100%;background:linear-gradient(90deg,#bd9255,#fff0b5,#c39a5c)}
+.gift-bow{position:absolute;z-index:7;left:50%;top:-17px;transform:translateX(-50%);font-size:38px;transition:transform .8s}
+.gift-surprise{position:absolute;z-index:4;left:0;right:0;top:15px;opacity:0;transform:translateY(70px) scale(.35);transition:opacity .5s,transform 1s;pointer-events:none;text-align:center}
+.gift-surprise .teddy{font-size:76px;display:block}
+.gift-surprise .gift-note{display:inline-block;margin-top:4px;padding:7px 12px;color:#ffe2a5;font-size:9px;letter-spacing:2px;background:#2b0b19cc;border:1px solid #d9b77877}
+.gift.open .gift-lid{transform:translate(-5px,-100px) rotate(-32deg)}
+.gift.open .gift-bow{transform:translate(-50%,-100px) rotate(-25deg)}
+.gift.open .gift-surprise{opacity:1;transform:translateY(-28px) scale(1)}
+.gift-message{min-height:45px;color:var(--gold)}
+.letter{width:min(100%,680px);margin:38px auto 0;padding:clamp(28px,5vw,48px);border:1px solid #d9b77866;background:linear-gradient(145deg,#301120,#080509);box-shadow:0 25px 65px #000b;display:none;text-align:left}
+.letter.show{display:block;animation:reveal .7s}
+.letter h3{font-size:48px;color:#edbdc9;text-align:center;margin-bottom:20px}
+footer{padding:48px 20px;text-align:center;border-top:1px solid #ffffff18;color:#c2a8b1;letter-spacing:3px;font-size:10px}
+footer span{color:#e83d69}
+footer p{margin-top:12px;font-size:9px}
+.music-btn{position:fixed;z-index:20;right:20px;bottom:20px;width:50px;height:50px;border-radius:50%;border:1px solid var(--gold);background:#190a10;color:var(--gold);font-size:20px}
+.music-btn.playing{animation:heartbeat 1.5s infinite}
+@media(max-width:760px){
+ section{padding:82px 6%}
+ .gallery{grid-template-columns:1fr;max-width:390px}
+ .photo-card img{height:min(105vw,430px)}
+ .slide-frame img{height:390px}
+ .hero-title{font-size:clamp(68px,15vw,100px)}
+ .message-box p,.letter p{font-size:19px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<div id="three-bg"></div>
+<div id="particles"></div>
+
+<div id="intro">
+  <div class="intro-ring"></div>
+  <div class="intro-content">
+    <p class="intro-sub">A LITTLE SURPRISE FOR SOMEONE SPECIAL</p>
+    <div class="intro-heart">♥</div>
+    <h1>My Billu</h1>
+    <button class="btn" id="startBtn">Enter Your Surprise ♥</button>
+  </div>
+</div>
+
+<audio id="music" loop preload="none">
+  <source src="romantic.mp3" type="audio/mpeg">
+</audio>
+<button class="music-btn" id="musicBtn" aria-label="Play music">♫</button>
+
+<main>
+<section id="hero">
+  <div class="hero-orbit"></div>
+  <div class="hero-content">
+    <p class="hero-kicker">A SPECIAL DAY · A SPECIAL PERSON</p>
+    <h1 class="hero-title">Happy Birthday<br>Billu ❤️</h1>
+    <div class="gold-line"></div>
+    <p class="hero-subtitle">YOU ARE SPECIAL</p>
+    <div class="hero-rose">🌹</div>
+    <p>Today, the world celebrates someone beautiful.</p>
+  </div>
+  <div class="scroll-hint">SCROLL TO DISCOVER ↓</div>
+</section>
+
+<section>
+  <p class="eyebrow">Beautiful Memories</p>
+  <h2>Our Special Moments</h2>
+  <div class="gold-line"></div>
+  <p>Every picture tells a beautiful story.</p>
+  <div class="slideshow">
+    <div class="slide-frame"><img id="slideImage" src="billu-1.jpg" alt="Billu memory"></div>
+    <div class="slide-caption" id="slideCaption">A beautiful smile ♥</div>
+    <div class="slide-controls">
+      <button class="slide-btn" id="prevSlide">‹</button>
+      <div class="slide-dots" id="slideDots"></div>
+      <button class="slide-btn" id="nextSlide">›</button>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <p class="eyebrow">Beautiful Memories</p>
+  <h2>My Favourite Moments</h2>
+  <div class="gold-line"></div>
+  <p>Three pictures, countless memories.</p>
+  <div class="gallery">
+    <figure class="photo-card card-3d"><img src="billu-1.jpg" alt="Billu memory 1"><figcaption class="photo-caption">A beautiful smile ♥</figcaption></figure>
+    <figure class="photo-card card-3d"><img src="billu-2.jpg" alt="Billu memory 2"><figcaption class="photo-caption">A precious moment</figcaption></figure>
+    <figure class="photo-card card-3d"><img src="billu-3.jpg" alt="Billu memory 3"><figcaption class="photo-caption">Forever memorable</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">A Few Words From My Heart</p>
+  <h2>For You, Billu</h2>
+  <div class="gold-line"></div>
+  <div class="message-box card-3d">
+    <p>
+      Life is full of unexpected moments, and some people make those moments more beautiful simply by being there.
+      <br><br>
+      We may fight, argue, tease each other and sometimes disagree, but every little moment becomes part of our story.
+      <br><br>
+      I hope your life is always filled with happiness, laughter, success and all the beautiful things you deserve.
+      <br><br>
+      Keep smiling, keep shining and never stop being you.
+      <br><br>
+      Happy Birthday, Billu. ❤️
+    </p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Make A Wish</p>
+  <h2>A Birthday Cake</h2>
+  <div class="gold-line"></div>
+  <p>Close your eyes, make a wish and blow the candle.</p>
+  <div class="cake-stage">
+    <div class="cake-3d">
+      <div class="cake-candle"><div class="flame" id="flame"></div></div>
+      <div class="cake-top"></div><div class="cake-bottom"></div>
+      <div class="cake-side"></div><div class="cake-cherry">🍒</div>
+      <div class="cake-plate"></div>
+    </div>
+  </div>
+  <button class="btn" id="blowBtn">Blow The Candle ✨</button>
+  <p id="cakeMessage"></p>
+</section>
+
+<section>
+  <p class="eyebrow">A Little Love</p>
+  <h2>Sending You Love</h2>
+  <div class="gold-line"></div>
+  <p>Tap the button and receive a thousand little hearts.</p><br>
+  <button class="btn" id="heartBtn">Send Love ♥</button>
+  <p id="heartMessage"></p>
+</section>
+
+<section>
+  <p class="eyebrow">Something Special</p>
+  <h2>A Special Gift For You</h2>
+  <div class="gold-line"></div>
+  <p>I have kept something special inside this box. Open it, Billu! ❤️</p>
+  <div class="gift-wrap">
+    <div class="gift" id="gift" role="button" tabindex="0" aria-expanded="false">
+      <div class="gift-surprise">
+        <span class="teddy">🧸</span>
+        <span class="gift-note">A HUG FOR YOU, BILLU ❤️</span>
+        <div style="font-size:27px;margin-top:7px">💖 ✨ 💝</div>
+      </div>
+      <div class="gift-box">
+        <div class="gift-front"></div><div class="gift-side"></div><div class="gift-top"></div>
+      </div>
+      <div class="gift-lid"></div><div class="gift-bow">🎀</div>
+    </div>
+  </div>
+  <p class="gift-message" id="giftMessage">Tap to open your surprise gift ♥</p>
+</section>
+
+<section>
+  <p class="eyebrow">Something From The Heart</p>
+  <h2>A Little Letter</h2>
+  <div class="gold-line"></div>
+  <button class="btn" id="letterBtn" aria-expanded="false">Open My Letter ♥</button>
+  <div class="letter card-3d" id="letter">
+    <h3>Dear Billu,</h3>
+    <p>
+      On your special day, I just want to wish you endless happiness. May every dream you have come true, may every new day bring something beautiful, and may your smile never fade.
+      <br><br>
+      Thank you for all the memories, silly fights, laughter and unforgettable moments.
+      <br><br>
+      You deserve all the love and happiness in the world.
+      <br><br>
+      With lots of love,<br>
+      Someone who wishes the best for you. ❤️
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>
+  MADE WITH <span>♥</span> FOR MY BILLU
+  <p>A LITTLE WEBSITE · A LOT OF FEELINGS</p>
+</footer>
+
+<script>
+"use strict";
+const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// THREE.JS 3D BACKGROUND
+(function loadThreeScene(){
+  const script=document.createElement("script");
+  script.src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js";
+  script.onload=initThreeScene;
+  document.head.appendChild(script);
+
+  function initThreeScene(){
+    if(!window.THREE||reducedMotion)return;
+    const host=document.getElementById("three-bg");
+    const scene=new THREE.Scene();
+    const camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,.1,100);
+    camera.position.z=19;
+    const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true});
+    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    renderer.setSize(innerWidth,innerHeight);
+    host.appendChild(renderer.domElement);
+
+    const group=new THREE.Group();
+    scene.add(group);
+    const geometry=new THREE.SphereGeometry(.075,10,10);
+    const material=new THREE.MeshBasicMaterial({color:0xe9a2b5,transparent:true,opacity:.65});
+    const particles=[];
+
+    for(let i=0;i<115;i++){
+      const mesh=new THREE.Mesh(geometry,material);
+      mesh.position.set((Math.random()-.5)*27,(Math.random()-.5)*18,(Math.random()-.5)*10);
+      mesh.userData.speed=.002+Math.random()*.008;
+      mesh.userData.phase=Math.random()*Math.PI*2;
+      group.add(mesh);
+      particles.push(mesh);
+    }
+
+    const ring=new THREE.Mesh(
+      new THREE.TorusGeometry(5.7,.008,8,150),
+      new THREE.MeshBasicMaterial({color:0xd9b778,transparent:true,opacity:.14})
+    );
+    ring.rotation.x=1.2;
+    scene.add(ring);
+
+    let mouseX=0,mouseY=0;
+    window.addEventListener("pointermove",e=>{
+      mouseX=(e.clientX/innerWidth-.5)*.7;
+      mouseY=(e.clientY/innerHeight-.5)*.4;
+    },{passive:true});
+
+    function animate(){
+      requestAnimationFrame(animate);
+      const t=performance.now()*.001;
+      particles.forEach(p=>{
+        p.position.y+=p.userData.speed;
+        p.position.x+=Math.sin(t+p.userData.phase)*.0018;
+        if(p.position.y>10)p.position.y=-10;
+      });
+      group.rotation.y+=.00035;
+      ring.rotation.z+=.0008;
+      camera.position.x+=(mouseX-camera.position.x)*.025;
+      camera.position.y+=(-mouseY-camera.position.y)*.025;
+      camera.lookAt(0,0,0);
+      renderer.render(scene,camera);
+    }
+    animate();
+
+    window.addEventListener("resize",()=>{
+      camera.aspect=innerWidth/innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(innerWidth,innerHeight);
+      renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    });
+  }
+})();
+
+// INTRO + MUSIC
+const intro=document.getElementById("intro");
+const music=document.getElementById("music");
+const musicBtn=document.getElementById("musicBtn");
+
+document.getElementById("startBtn").addEventListener("click",()=>{
+  intro.classList.add("hide");
+  toggleMusic();
+});
+
+async function toggleMusic(){
+  if(music.paused){
+    try{
+      await music.play();
+      musicBtn.classList.add("playing");
+      musicBtn.setAttribute("aria-pressed","true");
+    }catch(err){
+      console.warn("Check romantic.mp3 is in this folder.",err);
+    }
+  }else{
+    music.pause();
+    musicBtn.classList.remove("playing");
+    musicBtn.setAttribute("aria-pressed","false");
+  }
+}
+musicBtn.addEventListener("click",toggleMusic);
+
+// FALLING HEARTS AND PETALS
+let petalTimer=null;
+function createPetal(){
+  const layer=document.getElementById("particles");
+  if(layer.childElementCount>35)return;
+  const el=document.createElement("span");
+  el.className="petal";
+  el.textContent=Math.random()>.5?"♥":"✿";
+  el.style.left=Math.random()*100+"vw";
+  el.style.fontSize=10+Math.random()*15+"px";
+  const duration=8+Math.random()*8;
+  el.style.animationDuration=duration+"s";
+  layer.appendChild(el);
+  setTimeout(()=>el.remove(),duration*1000+300);
+}
+if(!reducedMotion){
+  createPetal();
+  petalTimer=setInterval(createPetal,850);
+}
+
+// PHOTO SLIDESHOW
+const slides=[
+  {src:"billu-1.jpg",caption:"A beautiful smile ♥"},
+  {src:"billu-2.jpg",caption:"A precious moment"},
+  {src:"billu-3.jpg",caption:"Forever memorable"}
+];
+let currentSlide=0,slideTimer=null;
+const slideImage=document.getElementById("slideImage");
+const slideCaption=document.getElementById("slideCaption");
+const slideDots=document.getElementById("slideDots");
+
+function showSlide(index){
+  currentSlide=(index+slides.length)%slides.length;
+  slideImage.style.opacity="0";
+  setTimeout(()=>{
+    slideImage.src=slides[currentSlide].src;
+    slideCaption.textContent=slides[currentSlide].caption;
+    slideImage.style.opacity="1";
+    [...slideDots.children].forEach((dot,i)=>dot.classList.toggle("active",i===currentSlide));
+  },180);
+}
+slides.forEach((slide,i)=>{
+  const dot=document.createElement("button");
+  dot.className="slide-dot"+(i===0?" active":"");
+  dot.setAttribute("aria-label","Show photo "+(i+1));
+  dot.addEventListener("click",()=>{showSlide(i);restartSlideshow();});
+  slideDots.appendChild(dot);
+});
+function restartSlideshow(){
+  if(slideTimer)clearInterval(slideTimer);
+  if(!reducedMotion)slideTimer=setInterval(()=>showSlide(currentSlide+1),4500);
+}
+document.getElementById("prevSlide").addEventListener("click",()=>{showSlide(currentSlide-1);restartSlideshow();});
+document.getElementById("nextSlide").addEventListener("click",()=>{showSlide(currentSlide+1);restartSlideshow();});
+restartSlideshow();
+
+// 3D CARD TILT
+if(!reducedMotion&&matchMedia("(pointer:fine)").matches){
+  document.querySelectorAll(".card-3d").forEach(card=>{
+    card.addEventListener("pointermove",e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width;
+      const y=(e.clientY-r.top)/r.height;
+      card.style.transform=`perspective(1000px) rotateX(${(.5-y)*7}deg) rotateY(${(x-.5)*9}deg) translateY(-5px)`;
+    });
+    card.addEventListener("pointerleave",()=>card.style.transform="");
+  });
+}
+
+// CELEBRATION EFFECT
+function createBurst(){
+  if(reducedMotion)return;
+  const symbols=["♥","✨","🌹","💖","✦"];
+  for(let i=0;i<32;i++){
+    const el=document.createElement("span");
+    el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.cssText=`position:fixed;left:${25+Math.random()*50}vw;top:${35+Math.random()*35}vh;z-index:30;pointer-events:none;font-size:${16+Math.random()*18}px;color:#ffd3df;text-shadow:0 0 12px #e83d69;transition:transform 1.4s ease,opacity 1.4s ease`;
+    document.body.appendChild(el);
+    requestAnimationFrame(()=>{
+      el.style.transform=`translate(${Math.random()*320-160}px,${-100-Math.random()*220}px) rotate(${Math.random()*240}deg) scale(1.5)`;
+      el.style.opacity="0";
+    });
+    setTimeout(()=>el.remove(),1500);
+  }
+}
+
+// CAKE CANDLE
+let candleBlown=false;
+document.getElementById("blowBtn").addEventListener("click",()=>{
+  if(candleBlown)return;
+  candleBlown=true;
+  document.getElementById("flame").classList.add("off");
+  document.getElementById("cakeMessage").textContent="Your wish is on its way to the universe! ✨❤️";
+  createBurst();
+  const btn=document.getElementById("blowBtn");
+  btn.textContent="Wish Made ❤️";
+  btn.disabled=true;
+});
+
+// SEND LOVE
+document.getElementById("heartBtn").addEventListener("click",()=>{
+  createBurst();
+  document.getElementById("heartMessage").textContent="A thousand hearts, just for you. ❤️";
+});
+
+// GIFT BOX
+const gift=document.getElementById("gift");
+function toggleGift(){
+  const open=gift.classList.toggle("open");
+  gift.setAttribute("aria-expanded",String(open));
+  document.getElementById("giftMessage").textContent=open
+    ?"Surprise! A teddy hug and lots of love for you, Billu! 🧸❤️"
+    :"Tap to open your surprise gift ♥";
+  if(open)createBurst();
+}
+gift.addEventListener("click",toggleGift);
+gift.addEventListener("keydown",e=>{
+  if(e.key==="Enter"||e.key===" "){e.preventDefault();toggleGift();}
+});
+
+// LOVE LETTER
+const letter=document.getElementById("letter");
+const letterBtn=document.getElementById("letterBtn");
+letterBtn.addEventListener("click",()=>{
+  const open=letter.classList.toggle("show");
+  letterBtn.textContent=open?"Close My Letter ♥":"Open My Letter ♥";
+  letterBtn.setAttribute("aria-expanded",String(open));
+});
+
+window.addEventListener("pagehide",()=>{
+  if(petalTimer)clearInterval(petalTimer);
+  if(slideTimer)clearInterval(slideTimer);
+  music.pause();
+});
+</script>
+</body>
+</html>
